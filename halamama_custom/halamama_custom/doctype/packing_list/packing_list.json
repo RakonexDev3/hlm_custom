@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-13 14:52:17.252412",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "column_break_exfp",
+  "date",
+  "section_break_lxwh",
+  "from_doctype",
+  "supplier",
+  "from_warehouse",
+  "column_break_lxrx",
+  "from_document",
+  "supplier_name",
+  "to_warehouse"
+ ],
+ "fields": [
+  {
+   "default": "HM-PL-.YY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "HM-PL-.YY.-.#####"
+  },
+  {
+   "fieldname": "column_break_exfp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_lxwh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "from_doctype",
+   "fieldtype": "Link",
+   "label": "From Doctype",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Material Request\",\"Purchase Order\"]]]",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_lxrx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_document",
+   "fieldtype": "Dynamic Link",
+   "label": "From Document",
+   "options": "from_doctype"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "from_warehouse",
+   "fieldtype": "Link",
+   "label": "From Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "to_warehouse",
+   "fieldtype": "Link",
+   "label": "To Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-13 15:36:02.862298",
+ "modified_by": "Administrator",
+ "module": "Halamama Custom",
+ "name": "Packing List",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
