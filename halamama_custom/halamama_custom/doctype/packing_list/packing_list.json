@@ -18,7 +18,10 @@
   "supplier_name",
   "to_warehouse",
   "section_break_ceek",
-  "items"
+  "fetch_items",
+  "items",
+  "section_break_kasb",
+  "remarks"
  ],
  "fields": [
   {
@@ -95,12 +98,26 @@
    "fieldtype": "Table",
    "label": "Items",
    "options": "Packing List Item"
+  },
+  {
+   "fieldname": "section_break_kasb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "fetch_items",
+   "fieldtype": "Button",
+   "label": "Fetch Items"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-14 09:49:08.459198",
+ "modified": "2026-04-14 12:58:18.023313",
  "modified_by": "Administrator",
  "module": "Halamama Custom",
  "name": "Packing List",
