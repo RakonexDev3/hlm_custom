@@ -14,7 +14,8 @@
   "supplier",
   "from_warehouse",
   "column_break_lxrx",
-  "from_document",
+  "from_po",
+  "from_mr",
   "supplier_name",
   "to_warehouse",
   "section_break_ceek",
@@ -54,12 +55,6 @@
   {
    "fieldname": "column_break_lxrx",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "from_document",
-   "fieldtype": "Dynamic Link",
-   "label": "From Document",
-   "options": "from_doctype"
   },
   {
    "fieldname": "supplier",
@@ -112,12 +107,26 @@
    "fieldname": "fetch_items",
    "fieldtype": "Button",
    "label": "Fetch Items"
+  },
+  {
+   "depends_on": "eval: doc.from_doctype == \"Purchase Order\";",
+   "fieldname": "from_po",
+   "fieldtype": "Link",
+   "label": "From Purchase Order",
+   "options": "Purchase Order"
+  },
+  {
+   "depends_on": "eval: doc.from_doctype == \"Material Request\";",
+   "fieldname": "from_mr",
+   "fieldtype": "Link",
+   "label": "From Material Request",
+   "options": "Material Request"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-14 12:58:18.023313",
+ "modified": "2026-04-16 11:56:58.628302",
  "modified_by": "Administrator",
  "module": "Halamama Custom",
  "name": "Packing List",
