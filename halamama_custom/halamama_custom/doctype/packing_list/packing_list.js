@@ -33,4 +33,32 @@ frappe.ui.form.on("Packing List", {
             }
         }
 	},
+
+    fetch_items(frm){
+        if(!frm.doc.from_document){
+            frappe.msgprint({
+                title: "Unable to Fetch",
+                message: "From Document field is empty",
+                indicator: "blue"
+            });
+        } else {
+            let ref_doctype = frm.doc.from_doctype;
+            
+            if(ref_doctype == "Purchase Order"){
+                frappe.db.get_doc(ref_doctype, frm.doc.from_document)
+                .then(po=>{
+                    if(po.items){
+                        frm.clear_table("items");
+                        (po.items || []).forEach(po_item=>{
+                            const row = frm.add_child("items");
+                            row.item_code = po_item.item_code;
+                            row.item_name = po_item.item_name;
+                            row.qty = po_item.qty;
+                        });
+                        frm.refresh_field("items");
+                    }
+                });
+            }
+        }
+    }
 });
