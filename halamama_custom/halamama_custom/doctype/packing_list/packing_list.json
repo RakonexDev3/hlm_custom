@@ -22,7 +22,8 @@
   "fetch_items",
   "items",
   "section_break_kasb",
-  "remarks"
+  "remarks",
+  "amended_from"
  ],
  "fields": [
   {
@@ -121,12 +122,23 @@
    "fieldtype": "Link",
    "label": "From Material Request",
    "options": "Material Request"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Packing List",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-04-16 11:56:58.628302",
+ "modified": "2026-04-16 13:45:04.752411",
  "modified_by": "Administrator",
  "module": "Halamama Custom",
  "name": "Packing List",
