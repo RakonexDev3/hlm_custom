@@ -3,9 +3,12 @@
 
 frappe.ui.form.on("Packing List", {
 	from_po(frm) {
-        if(!frm.doc.from_doctype || !frm.doc.from_po) {
+        if(!frm.doc.from_po) {
             return;
         } else {
+            if (!frm.doc.from_doctype){
+                frm.set_value("from_doctype", "Purchase Order")
+            }
             if(frm.doc.from_doctype == "Purchase Order") {
                 frappe.db.get_value("Purchase Order", frm.doc.from_po, ["supplier", "supplier_name"])
                 .then(r=>{

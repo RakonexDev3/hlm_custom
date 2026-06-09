@@ -39,6 +39,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -147,7 +148,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-16 13:55:25.774580",
+ "modified": "2026-04-16 15:41:28.775222",
  "modified_by": "Administrator",
  "module": "Halamama Custom",
  "name": "Packing List",
